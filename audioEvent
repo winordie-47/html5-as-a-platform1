@@ -1,0 +1,5 @@
+var audio = document.createElement("audio");
+audio.src = "audio/sample.mp3";
+audio.addEventListener("canplaythrough", function () {
+ alert('The file is loaded and ready to play!');
+}, false);
