@@ -31,3 +31,33 @@ window.addEventListener("DOMContentLoaded", function() {
 
 }, false);
 
+window.onload = function(){
+  fname.value = localStorage.getItem(fname.id);
+  lname.value = localStorage.getItem(lname.id);
+  email.value = localStorage.getItem(email.id);
+  phone.value = localStorage.getItem(phone.id);
+};
+
+var fname = document.getElementById("firstname");
+var lname = document.getElementById("lastname");
+var email = document.getElementById("email");
+var phone = document.getElementById("phone");
+
+fname.onblur = function(){
+  storeData(this.id, this.value);
+};
+lname.onblur = function(){
+  storeData(this.id, this.value);
+};
+email.onblur = function(){
+  storeData(this.id, this.value);
+};
+phone.onblur = function(){
+  storeData(this.id, this.value);
+};
+
+function storeData(name, value){
+  localStorage.setItem(name, value);
+};
+
+
